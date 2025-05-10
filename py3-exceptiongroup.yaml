@@ -51,6 +51,10 @@ subpackages:
           python: python${{range.key}}
       - uses: strip
     test:
+      environment:
+        contents:
+          packages:
+            - py${{range.key}}-typing-extensions
       pipeline:
         - uses: python/import
           with:
